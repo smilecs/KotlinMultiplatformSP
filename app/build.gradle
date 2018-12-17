@@ -77,6 +77,16 @@ kotlin {
     }
 }
 
+task copyToDir(type: Copy){
+    from ("$buildDir/outputs/aar"){
+        include "*.aar"   
+    }
+    from("$buildDir/bin/ios/main/"){
+        //include "*.framework"
+    }
+    into "../dist"
+}
+
 // This task attaches native framework built from ios module to Xcode project
 // (see iosApp directory). Don't run this task directly,
 // Xcode runs this task itself during its build process.
@@ -98,3 +108,4 @@ task copyFramework {
         }
     }
 }
+build.finalizedBy(copyToDir)
