@@ -2,7 +2,7 @@
 
 @class AppConfig, AppAppConfigImpl, AppAppConfigImplCompanion, AppField, AppProperty, AppConfigCompanion, AppConfig$serializer, AppFieldCompanion, AppField$serializer, AppPropertyCompanion, AppProperty$serializer, AppKotlinArray, AppKotlinx_serialization_runtime_nativeEnumDescriptor, AppKotlinx_serialization_runtime_nativeSerialKind, AppKotlinNothing, AppKotlinx_serialization_runtime_nativeUpdateMode, AppKotlinx_serialization_runtime_nativeSerialClassDescImpl, AppKotlinEnum;
 
-@protocol AppAppConfig, AppAppConfigFactory, AppKotlinx_serialization_runtime_nativeKSerializer, AppKotlinx_serialization_runtime_nativeSerializationStrategy, AppKotlinx_serialization_runtime_nativeEncoder, AppKotlinx_serialization_runtime_nativeSerialDescriptor, AppKotlinx_serialization_runtime_nativeDeserializationStrategy, AppKotlinx_serialization_runtime_nativeDecoder, AppKotlinx_serialization_runtime_nativeCompositeEncoder, AppKotlinx_serialization_runtime_nativeSerialContext, AppKotlinAnnotation, AppKotlinx_serialization_runtime_nativeCompositeDecoder, AppKotlinIterator, AppKotlinx_serialization_runtime_nativeGeneratedSerializer, AppKotlinKClass, AppKotlinComparable, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier;
+@protocol AppAppConfig, AppKotlinx_serialization_runtime_nativeKSerializer, AppKotlinx_serialization_runtime_nativeSerializationStrategy, AppKotlinx_serialization_runtime_nativeEncoder, AppKotlinx_serialization_runtime_nativeSerialDescriptor, AppKotlinx_serialization_runtime_nativeDeserializationStrategy, AppKotlinx_serialization_runtime_nativeDecoder, AppKotlinx_serialization_runtime_nativeCompositeEncoder, AppKotlinx_serialization_runtime_nativeSerialContext, AppKotlinAnnotation, AppKotlinx_serialization_runtime_nativeCompositeDecoder, AppKotlinIterator, AppKotlinx_serialization_runtime_nativeGeneratedSerializer, AppKotlinKClass, AppKotlinComparable, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -150,12 +150,6 @@ __attribute__((swift_name("AppConfig")))
 - (NSString *)getCache __attribute__((swift_name("getCache()")));
 - (void)saveConfigJson:(NSString *)json __attribute__((swift_name("saveConfig(json:)")));
 - (void)restoreDefault __attribute__((swift_name("restoreDefault()")));
-@end;
-
-__attribute__((swift_name("AppConfigFactory")))
-@protocol AppAppConfigFactory
-@required
-- (id<AppAppConfig>)createCountry:(NSString *)country __attribute__((swift_name("create(country:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
