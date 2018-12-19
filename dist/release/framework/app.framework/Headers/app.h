@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@class AppConfig, AppAppConfigImpl, AppAppConfigImplFactory, AppField, AppProperty, AppConfigCompanion, AppConfig$serializer, AppFieldCompanion, AppField$serializer, AppPropertyCompanion, AppProperty$serializer, AppKotlinArray, AppKotlinx_serialization_runtime_nativeEnumDescriptor, AppKotlinx_serialization_runtime_nativeSerialKind, AppKotlinNothing, AppKotlinx_serialization_runtime_nativeUpdateMode, AppKotlinx_serialization_runtime_nativeSerialClassDescImpl, AppKotlinEnum;
+@class AppConfig, AppAppConfigImpl, AppAppConfigImplCompanion, AppField, AppProperty, AppConfigCompanion, AppConfig$serializer, AppFieldCompanion, AppField$serializer, AppPropertyCompanion, AppProperty$serializer, AppKotlinArray, AppKotlinx_serialization_runtime_nativeEnumDescriptor, AppKotlinx_serialization_runtime_nativeSerialKind, AppKotlinNothing, AppKotlinx_serialization_runtime_nativeUpdateMode, AppKotlinx_serialization_runtime_nativeSerialClassDescImpl, AppKotlinEnum;
 
 @protocol AppAppConfig, AppAppConfigFactory, AppKotlinx_serialization_runtime_nativeKSerializer, AppKotlinx_serialization_runtime_nativeSerializationStrategy, AppKotlinx_serialization_runtime_nativeEncoder, AppKotlinx_serialization_runtime_nativeSerialDescriptor, AppKotlinx_serialization_runtime_nativeDeserializationStrategy, AppKotlinx_serialization_runtime_nativeDecoder, AppKotlinx_serialization_runtime_nativeCompositeEncoder, AppKotlinx_serialization_runtime_nativeSerialContext, AppKotlinAnnotation, AppKotlinx_serialization_runtime_nativeCompositeDecoder, AppKotlinIterator, AppKotlinx_serialization_runtime_nativeGeneratedSerializer, AppKotlinKClass, AppKotlinComparable, AppKotlinKDeclarationContainer, AppKotlinKAnnotatedElement, AppKotlinKClassifier;
 
@@ -164,10 +164,12 @@ __attribute__((swift_name("AppConfigImpl")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("AppConfigImpl.Factory")))
-@interface AppAppConfigImplFactory : KotlinBase <AppAppConfigFactory>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+__attribute__((swift_name("AppConfigImpl.Companion")))
+@interface AppAppConfigImplCompanion : KotlinBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<AppAppConfig>)createCountry:(NSString *)country __attribute__((swift_name("create(country:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

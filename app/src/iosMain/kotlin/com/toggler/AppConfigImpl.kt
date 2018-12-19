@@ -6,12 +6,6 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
     private val delegate: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     private val cache = NSCache()
 
-    actual class Factory : AppConfig.Factory {
-        actual override fun create(country: String): AppConfig {
-            return AppConfigImpl(country)
-        }
-    }
-
     actual override fun writeToCache(json: String) {
         cache.setObject(CONFIG_DATA, json)
     }
@@ -44,5 +38,8 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
 
     actual override fun restoreDefault() {
         delegate.setObject(CONFIG_DATA, getCache())
+    }
+   actual companion object {
+       fun create(country: String): AppConfig = AppConfigImpl(country)
     }
 }

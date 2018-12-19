@@ -11,11 +11,6 @@ actual class AppConfigImpl private constructor(
 ) : AppConfig {
     private val pref = context.getSharedPreferences("config", Context.MODE_PRIVATE)
 
-    actual class Factory(private val context: Context) : AppConfig.Factory {
-        actual override fun create(country: String): AppConfig {
-            return AppConfigImpl(country, context)
-        }
-    }
 
     actual override fun writeToCache(json: String) {
         context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use {
@@ -52,5 +47,9 @@ actual class AppConfigImpl private constructor(
 
     actual override fun restoreDefault() {
         pref.edit().putString(CONFIG_DATA, getCache()).apply()
+    }
+
+    actual companion object {
+        fun create(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
     }
 }
