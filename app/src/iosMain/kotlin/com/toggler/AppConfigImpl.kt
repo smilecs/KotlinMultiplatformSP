@@ -21,7 +21,8 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
     }
 
     actual override fun getConfig(): Config {
-        return (delegate.objectForKey(CONFIG_DATA) as String?)?.toConfig() ?: throw IllegalStateException()
+        return (delegate.objectForKey(CONFIG_DATA) as String?)?.toConfig()
+            ?: throw IllegalStateException("Config value not initialised")
     }
 
     actual override fun getCache(): String {
@@ -39,7 +40,12 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
     actual override fun restoreDefault() {
         delegate.setObject(CONFIG_DATA, getCache())
     }
-   actual companion object {
-       fun get(country: String): AppConfig = AppConfigImpl(country)
+
+    actual companion object {
+        fun create(country: String): AppConfig = AppConfigImpl(country)
+        fun get(): Config {
+            return (NSUserDefaults.standardUserDefaults().objectForKey(CONFIG_DATA) as String?)?.toConfig()
+                ?: throw IllegalStateException("Config value not initialised")
+        }
     }
 }

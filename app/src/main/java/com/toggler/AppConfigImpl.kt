@@ -26,7 +26,7 @@ actual class AppConfigImpl private constructor(
     }
 
     actual override fun getConfig(): Config {
-        return pref.getString(FILE_NAME, null)?.toConfig() ?: throw IllegalStateException()
+        return pref.getString(FILE_NAME, null)?.toConfig() ?: throw IllegalStateException("Config value not initialised")
     }
 
     actual override fun getCache(): String {
@@ -51,6 +51,11 @@ actual class AppConfigImpl private constructor(
     }
 
     actual companion object {
-        fun get(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
+        fun create(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
+
+        fun get(context: Context): Config {
+            val pref = context.getSharedPreferences("config", Context.MODE_PRIVATE)
+            return pref.getString(FILE_NAME, null)?.toConfig() ?: throw IllegalStateException("Config value not initialised")
+        }
     }
 }
