@@ -43,7 +43,7 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
 
     actual companion object {
         fun create(country: String): AppConfig = AppConfigImpl(country)
-        fun get(): Config {
+        fun getConfig(): Config {
             return (NSUserDefaults.standardUserDefaults().objectForKey(CONFIG_DATA) as String?)?.toConfig()
                 ?: throw IllegalStateException("Config value not initialised")
         }

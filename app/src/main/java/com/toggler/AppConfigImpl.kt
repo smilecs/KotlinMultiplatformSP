@@ -53,7 +53,7 @@ actual class AppConfigImpl private constructor(
     actual companion object {
         fun create(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
 
-        fun get(context: Context): Config {
+        fun getConfig(context: Context): Config {
             val pref = context.getSharedPreferences("config", Context.MODE_PRIVATE)
             return pref.getString(FILE_NAME, null)?.toConfig() ?: throw IllegalStateException("Config value not initialised")
         }

@@ -164,7 +164,7 @@ __attribute__((swift_name("AppConfigImpl.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 - (id<AppAppConfig>)createCountry:(NSString *)country __attribute__((swift_name("create(country:)")));
-- (AppConfig *)get __attribute__((swift_name("get()")));
+- (AppConfig *)getConfig __attribute__((swift_name("getConfig()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
