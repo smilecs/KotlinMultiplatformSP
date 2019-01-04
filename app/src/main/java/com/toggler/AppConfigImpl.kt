@@ -36,6 +36,7 @@ actual class AppConfigImpl private constructor(
                 it.readText()
             }
         } catch (fne: FileNotFoundException) {
+            fne.printStackTrace()
             getDefault()
         }
     }
@@ -50,6 +51,6 @@ actual class AppConfigImpl private constructor(
     }
 
     actual companion object {
-        fun create(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
+        fun get(country: String, context: Context): AppConfig = AppConfigImpl(country, context)
     }
 }

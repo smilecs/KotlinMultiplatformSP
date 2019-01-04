@@ -163,7 +163,7 @@ __attribute__((swift_name("AppConfigImpl.Companion")))
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-- (id<AppAppConfig>)createCountry:(NSString *)country __attribute__((swift_name("create(country:)")));
+- (id<AppAppConfig>)getCountry:(NSString *)country __attribute__((swift_name("get(country:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

@@ -4,7 +4,7 @@
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="3" platform="Native " useProjectSettings="false" isTestModule="false" externalProjectId=":app">
         <sourceSets>
-          <sourceSet>com.github.com.smilecs.app.commonMain</sourceSet>
+          <sourceSet>com.toggler.app.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />

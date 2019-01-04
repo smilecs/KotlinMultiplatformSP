@@ -40,6 +40,6 @@ actual class AppConfigImpl private constructor(private val country: String) : Ap
         delegate.setObject(CONFIG_DATA, getCache())
     }
    actual companion object {
-       fun create(country: String): AppConfig = AppConfigImpl(country)
+       fun get(country: String): AppConfig = AppConfigImpl(country)
     }
 }
